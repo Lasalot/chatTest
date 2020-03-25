@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -27,7 +28,6 @@
     <title>React App</title>
   </head>
 
-
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
@@ -41,36 +41,31 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
-L
-1
-Search
-Inbox
-New1
-
-Denise Campbell 19th Feb
-Return Request ID : AQW128A
- Inbox
-
-Good afternoon undefined
-Time to ace those conversations. 🚀
-
-Get Started
-Appearance
-Your Profile
-Integrations
-Code Installation
-Paste this code snippet before </BODY> Copy Code
-<script>
-  function initFreshChat() {
-    window.fcWidget.init({
-      token: "23ee12da-ba36-4857-849f-3f91824cc10b",
-      host: "https://wchat.freshchat.com"
-    });
-  }
-  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-</script>
-
-
+    <div id="chat">
+      <script>
+        function initFreshChat() {
+          window.fcWidget.init({
+            token: "23ee12da-ba36-4857-849f-3f91824cc10b",
+            host: "https://wchat.freshchat.com"
+          });
+        }
+        function initialize(i, t) {
+          var e;
+          i.getElementById(t)
+            ? initFreshChat()
+            : (((e = i.createElement("script")).id = t),
+              (e.async = !0),
+              (e.src = "https://wchat.freshchat.com/js/widget.js"),
+              (e.onload = initFreshChat),
+              i.head.appendChild(e));
+        }
+        function initiateCall() {
+          initialize(document, "freshchat-js-sdk");
+        }
+        window.addEventListener
+          ? window.addEventListener("load", initiateCall, !1)
+          : window.attachEvent("load", initiateCall, !1);
+      </script>
+    </div>
   </body>
 </html>
