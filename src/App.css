@@ -28,8 +28,10 @@
   color: #61dafb;
 }
 
-img {
-  background: rgba(255, 255, 255, 1);
+p {
+  background-color: red;
+  border-radius: 30px;
+  padding: 20px 20px;
 }
 
 .emoji {
