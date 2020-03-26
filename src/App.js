@@ -1,17 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-import Emojis from "./emojiComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Chat Test for Taki, bottom right </p>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>Chat Test for Taki </p>
 
-        <Emojis symbol="⬇️" label="downward" />
-      </header>
-    </div>
-  );
+          <p className="rightArrow">
+            <span role="img" aria-label="kayako">
+              ⬇️
+            </span>
+            Kayako Chat
+          </p>
+
+          <p className="leftArrow">
+            Fresh Chat
+            <span role="img" aria-label="kayako">
+              ⬇️
+            </span>
+          </p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

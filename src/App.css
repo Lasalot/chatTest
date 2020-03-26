@@ -34,6 +34,22 @@ p {
   padding: 20px 20px;
 }
 
-.emoji {
-  -webkit-transform: rotate(-50deg);
+.rightArrow {
+  margin-top: 150px;
+  -webkit-transform: rotate(-25deg) !important;
+  right: 1%;
+  position: absolute;
+  z-index: 1;
+}
+
+.leftArrow {
+  position: absolute;
+  margin-top: 150px;
+  left: 1%;
+  -webkit-transform: rotate(30deg);
+}
+
+.custom_fc_frame {
+  right: 95% !important;
+  bottom: 30px !important;
 }

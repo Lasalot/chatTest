@@ -29,42 +29,90 @@
   </head>
 
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="root">
+      <!-- Freschat chat widget -->
+      <div id="Fresh_chat">
+        <script>
+          function initFreshChat() {
+            window.fcWidget.init({
+              token: "23ee12da-ba36-4857-849f-3f91824cc10b",
+              host: "https://wchat.freshchat.com",
+              config: {
+                cssNames: {
+                  widget: "custom_fc_frame"
+                }
+              }
+            });
+          }
+          function initialize(i, t) {
+            var e;
+            i.getElementById(t)
+              ? initFreshChat()
+              : (((e = i.createElement("script")).id = t),
+                (e.async = !0),
+                (e.src = "https://wchat.freshchat.com/js/widget.js"),
+                (e.onload = initFreshChat),
+                i.head.appendChild(e));
+          }
+          function initiateCall() {
+            initialize(document, "freshchat-js-sdk");
+          }
+          window.addEventListener
+            ? window.addEventListener("load", initiateCall, !1)
+            : window.attachEvent("load", initiateCall, !1);
+        </script>
+      </div>
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <div id="chat">
+    <!-- Kayako chat widhet -->
+    <div id="kayako">
       <script>
-        function initFreshChat() {
-          window.fcWidget.init({
-            token: "23ee12da-ba36-4857-849f-3f91824cc10b",
-            host: "https://wchat.freshchat.com"
-          });
-        }
-        function initialize(i, t) {
-          var e;
-          i.getElementById(t)
-            ? initFreshChat()
-            : (((e = i.createElement("script")).id = t),
-              (e.async = !0),
-              (e.src = "https://wchat.freshchat.com/js/widget.js"),
-              (e.onload = initFreshChat),
-              i.head.appendChild(e));
-        }
-        function initiateCall() {
-          initialize(document, "freshchat-js-sdk");
-        }
-        window.addEventListener
-          ? window.addEventListener("load", initiateCall, !1)
-          : window.attachEvent("load", initiateCall, !1);
+        (function(d, a) {
+          function c() {
+            var b = d.createElement("script");
+            b.async = !0;
+            b.type = "text/javascript";
+            b.src = a._settings.messengerUrl;
+            b.crossOrigin = "anonymous";
+            var c = d.getElementsByTagName("script")[0];
+            c.parentNode.insertBefore(b, c);
+          }
+          window.kayako = a;
+          a.readyQueue = [];
+          a.newEmbedCode = !0;
+          a.ready = function(b) {
+            a.readyQueue.push(b);
+          };
+          a._settings = {
+            apiUrl: "https://bitninja.kayako.com/api/v1",
+            teamName: "BitNinja",
+            homeTitles: [{ locale: "en-us", translation: "Hello! 👋" }],
+            homeSubtitles: [
+              {
+                locale: "en-us",
+                translation:
+                  "Welcome to BitNinja. Let's chat — start a new conversation below."
+              }
+            ],
+            messengerUrl: "https://bitninja.kayakocdn.com/messenger",
+            realtimeUrl: "wss://kre.kayako.net/socket",
+            widgets: {
+              presence: { enabled: true },
+              twitter: { enabled: false, twitterHandle: "null" },
+              articles: { enabled: false, sectionId: null }
+            },
+            styles: {
+              primaryColor: "#ff4600",
+              homeBackground: "0deg, #F25555 0%, #FB72AE 100%",
+              homePattern:
+                "https://assets.kayako.com/messenger/pattern-1--dark.svg",
+              homeTextColor: "#FFFFFF"
+            }
+          };
+          window.attachEvent
+            ? window.attachEvent("onload", c)
+            : window.addEventListener("load", c, !1);
+        })(document, window.kayako || {});
       </script>
     </div>
   </body>
