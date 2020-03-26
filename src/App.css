@@ -36,7 +36,7 @@ p {
 
 .rightArrow {
   margin-top: 150px;
-  -webkit-transform: rotate(-25deg) !important;
+
   right: 1%;
   position: absolute;
   z-index: 1;
@@ -45,11 +45,10 @@ p {
 .leftArrow {
   position: absolute;
   margin-top: 150px;
-  left: 1%;
-  -webkit-transform: rotate(30deg);
+  left: 10%;
 }
 
 .custom_fc_frame {
-  right: 95% !important;
+  right: 82% !important;
   bottom: 30px !important;
 }

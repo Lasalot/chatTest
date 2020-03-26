@@ -9,10 +9,10 @@ class App extends Component {
           <p>Chat Test for Taki </p>
 
           <p className="rightArrow">
+            Kayako Chat
             <span role="img" aria-label="kayako">
               ⬇️
             </span>
-            Kayako Chat
           </p>
 
           <p className="leftArrow">
