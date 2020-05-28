@@ -30,89 +30,43 @@
 
   <body>
     <div id="root">
-      <!-- Freschat chat widget -->
-      <div id="Fresh_chat">
-        <script>
-          function initFreshChat() {
-            window.fcWidget.init({
-              token: "23ee12da-ba36-4857-849f-3f91824cc10b",
-              host: "https://wchat.freshchat.com",
-              config: {
-                cssNames: {
-                  widget: "custom_fc_frame"
-                }
-              }
-            });
-          }
-          function initialize(i, t) {
-            var e;
-            i.getElementById(t)
-              ? initFreshChat()
-              : (((e = i.createElement("script")).id = t),
-                (e.async = !0),
-                (e.src = "https://wchat.freshchat.com/js/widget.js"),
-                (e.onload = initFreshChat),
-                i.head.appendChild(e));
-          }
-          function initiateCall() {
-            initialize(document, "freshchat-js-sdk");
-          }
-          window.addEventListener
-            ? window.addEventListener("load", initiateCall, !1)
-            : window.attachEvent("load", initiateCall, !1);
-        </script>
-      </div>
-    </div>
-
-    <!-- Kayako chat widhet -->
-    <div id="kayako">
-      <script>
-        (function(d, a) {
-          function c() {
-            var b = d.createElement("script");
-            b.async = !0;
-            b.type = "text/javascript";
-            b.src = a._settings.messengerUrl;
-            b.crossOrigin = "anonymous";
-            var c = d.getElementsByTagName("script")[0];
-            c.parentNode.insertBefore(b, c);
-          }
-          window.kayako = a;
-          a.readyQueue = [];
-          a.newEmbedCode = !0;
-          a.ready = function(b) {
-            a.readyQueue.push(b);
-          };
-          a._settings = {
-            apiUrl: "https://bitninja.kayako.com/api/v1",
-            teamName: "BitNinja",
-            homeTitles: [{ locale: "en-us", translation: "Hello! 👋" }],
-            homeSubtitles: [
-              {
-                locale: "en-us",
-                translation:
-                  "Welcome to BitNinja. Let's chat — start a new conversation below."
-              }
-            ],
-            messengerUrl: "https://bitninja.kayakocdn.com/messenger",
-            realtimeUrl: "wss://kre.kayako.net/socket",
-            widgets: {
-              presence: { enabled: true },
-              twitter: { enabled: false, twitterHandle: "null" },
-              articles: { enabled: false, sectionId: null }
-            },
-            styles: {
-              primaryColor: "#ff4600",
-              homeBackground: "0deg, #F25555 0%, #FB72AE 100%",
-              homePattern:
-                "https://assets.kayako.com/messenger/pattern-1--dark.svg",
-              homeTextColor: "#FFFFFF"
-            }
-          };
-          window.attachEvent
-            ? window.attachEvent("onload", c)
-            : window.addEventListener("load", c, !1);
-        })(document, window.kayako || {});
+      <!-- Heap script -->
+      <script type="text/javascript">
+        (window.heap = window.heap || []),
+          (heap.load = function (e, t) {
+            (window.heap.appid = e), (window.heap.config = t = t || {});
+            var r = document.createElement("script");
+            (r.type = "text/javascript"),
+              (r.async = !0),
+              (r.src = "https://cdn.heapanalytics.com/js/heap-" + e + ".js");
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(r, a);
+            for (
+              var n = function (e) {
+                  return function () {
+                    heap.push(
+                      [e].concat(Array.prototype.slice.call(arguments, 0))
+                    );
+                  };
+                },
+                p = [
+                  "addEventProperties",
+                  "addUserProperties",
+                  "clearEventProperties",
+                  "identify",
+                  "resetIdentity",
+                  "removeEventProperty",
+                  "setEventProperties",
+                  "track",
+                  "unsetEventProperty",
+                ],
+                o = 0;
+              o < p.length;
+              o++
+            )
+              heap[p[o]] = n(p[o]);
+          });
+        heap.load("2000799742");
       </script>
     </div>
   </body>

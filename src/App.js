@@ -3,24 +3,14 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    function smashBros() {
+      alert("Do not hurt me no more");
+    }
     return (
       <div className="App">
         <header className="App-header">
-          <p>Chat Test for Taki </p>
-
-          <p className="rightArrow">
-            Kayako Chat
-            <span role="img" aria-label="kayako">
-              ⬇️
-            </span>
-          </p>
-
-          <p className="leftArrow">
-            Fresh Chat
-            <span role="img" aria-label="kayako">
-              ⬇️
-            </span>
-          </p>
+          <p>Red flag hunt! </p>
+          <button onClick={smashBros}> Smash it until you rage!</button>
         </header>
       </div>
     );
